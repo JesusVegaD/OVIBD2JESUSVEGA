@@ -390,3 +390,46 @@ footer p {
     }
 }
 
+
+
+.btn-inicio {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #1565c0;
+    color: white;
+
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.btn-inicio:hover {
+    background-color: #0d47a1;
+    transform: translateY(-4px);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 480px) {
+    .btn-inicio {
+        width: 45px;
+        height: 45px;
+        bottom: 18px;
+        right: 18px;
+        font-size: 24px;
+    }
+}
+
