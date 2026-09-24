@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVI DE PROYECTO WEB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>OVI introduccion a  Bases de datos II</h1>
+
+        <h2> Introduccion </h2>
+
+         <p> Recusro educicato para el aprendizaje de  conceptos fundamentales de bases de datos, SQL, procedimientos
+            almacenados, triggers y transacciones.</p>
+    </header>
+<nav>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#conceptos">Conceptos</a></li>
+        <li><a href="#sql">SQL</a></li>
+        <li><a href="#consultas_avanzadas">Consultas Avanzadas</a></li> 
+        <li><a href="#procedimientos">Procedimientos y funciones</a></li>  
+        <li ><a href="#triggers">Triggers</a></li>
+       <li><a href="#actividades">actividades</a></li>
+        <li><a href="#autor">Autor</a></li>
+
+    </ul>
+</nav>
+
+<main>
+
+<section id="inicio">
+    <h2>INICIO</h2>
+
+<h3>Introducción a Bases de Datos</h3>
+   
+<p> Las bases de datos son sistemeas utilizados para almacenar y organizar, consultar y administrar información de manerea estructurada.</p>
+
+<p> Acutalmente las bases de datos son fundamentales en el desarrollo de aplicaciones empresariales o sistemas acdemicos, plataformas web, entidades finacieras y hospitales, permitiendo un acceso eficiente y seguro a la información.</p>
+
+<p>En este recurso educativo se abordarán los conceptos fundamentales de bases de datos, SQL, procedimientos almacenados, triggers y transacciones, proporcionando una base sólida para el desarrollo de habilidades en el manejo de datos.</p>
+
+<img src="img/imagen 1.jpg" alt="Bases de datos" width="20%" height="10%">
+
+</section>
+
+<br>
+<section id="conceptos">
+    <h3> Bases de datos relacionales</h3>
+
+    <p> Una bases de datos  es un conjunto de datos organizados de informacion que se almacena y puede ser consultada, modificada y administrada mediante un sistema especializado..</p>
+
+    <p> Las Bases de Datos nos permiten gestionar grandes volúmenes de información de manera eficiente y segura.</p>
+
+    <img src="img/img3.png" alt="Bases de datos relacionales" width="30%" height="20%">
+
+<p>> El moedelo relacional organiza los datos en tablas interrelacionadas, cada tabla representa una entidad y las relaciones se establecen mediante claves primarias y foráneas.</p>
+
+<h3>Ejemplo</h3>
+
+            <table border="1">
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Nombre</th>
+
+                    <th>Correo</th>
+
+                    <th>Teléfono</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>1</td>
+
+                    <td>Juan Pérez</td>
+
+                    <td>juan@email.com</td>
+
+                    <td>3000000000</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td>María López</td>
+
+                    <td>maria@email.com</td>
+
+                    <td>3010000000</td>
+
+                </tr>
+
+            </table>
+</section>
+
+<br>
+<section id="sql">
+    <h3>SQL</h3>
+
+    <p> SQL (Structured Query Language) es un lenguaje de programación utilizado para gestionar y manipular bases de datos relacionales. Permite realizar consultas, insertar, actualizar y eliminar datos, así como crear y modificar estructuras de bases de datos.</p>
+
+    <p> SQL es fundamental para interactuar con bases de datos y es ampliamente utilizado en aplicaciones empresariales y sistemas de información.</p>
+
+    <h4> Operaciones Básicas SQL</h4>
+    <ul>
+        <li>SELECT: Recupera datos de una o más tablas.</li>
+        <li>INSERT: Agrega nuevos registros a una tabla.</li>
+        <li>UPDATE: Modifica registros existentes en una tabla.</li>
+        <li>DELETE: Elimina registros de una tabla.</li>
+        <li>CREATE TABLE: Crea una nueva tabla en la base de datos.</li>
+        <li>ALTER TABLE: Modifica la estructura de una tabla existente.</li>
+        <li>DROP TABLE: Elimina una tabla de la base de datos.</li>
+    </ul>
+
+    <img src="img/istockphoto-1392551538-612x612.jpg" alt="SQL" width="30%" height="20%">
+
+
+</section>
+
+<br>
+<section id="consultas_avanzadas">
+    <h3>Consultas Avanzadas</h3>
+
+    <p> Las consultas avanzadas en SQL permiten realizar operaciones más complejas y obtener información específica de las bases de datos. Estas consultas pueden incluir filtros, agrupaciones, ordenamientos y combinaciones de tablas.</p>
+
+
+    <img src="img/img5.jpg" alt="Consultas Avanzadas" width="30%" height="20%">
+
+    <h4>JOIN</h4>
+
+    <p> El operador JOIN se utiliza para combinar filas de dos o más tablas basándose en una relación entre ellas.</p>
+
+<pre>
+SELECT clientes.nombre, pagos.fecha
+FROM clientes
+INNER JOIN pagos
+ON clientes.id = pagos.cliente_id;
+            </pre>
+
+            <h4>Tipos de JOIN</h4>
+
+            <ul>
+
+                <li>INNER JOIN</li>
+
+                <li>LEFT JOIN</li>
+
+                <li>RIGHT JOIN</li>
+
+                <li>FULL JOIN</li>
+
+            </ul>
+            <h4>GROUP BY</h4>
+
+            <p>
+                GROUP BY permite agrupar registros que tienen valores
+                similares en determinadas columnas.
+            </p>
+
+            <pre>
+SELECT ciudad, COUNT(*)
+FROM clientes
+GROUP BY ciudad;
+            </pre>
+
+
+            <h4>Funciones de agregación</h4>
+
+            <ul>
+
+                <li>COUNT()</li>
+
+                <li>SUM()</li>
+
+                <li>AVG()</li>
+
+                <li>MAX()</li>
+
+                <li>MIN()</li>
+
+            </ul>
+
+
+            <h4>HAVING</h4>
+
+            <pre>
+SELECT ciudad, COUNT(*)
+FROM clientes
+GROUP BY ciudad
+HAVING COUNT(*) > 5;
+            </pre>
+
+
+            <h4>Subconsultas</h4>
+
+            <p> Video demostrativo  y profundizacion sobre subconsultas </p>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/X4ffVGDI2Fo?si=z0AxFDX2lAk8salH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>
+
+<br>
+<section id="procedimientos">   
+    <h3>Procedimientos almacenados y funciones</h3>
+
+    <p> Los procedimientos almacenados y las funciones son bloques de código SQL que se almacenan en la base de datos y se pueden ejecutar para realizar tareas específicas. Los procedimientos pueden aceptar parámetros y realizar operaciones complejas, mientras que las funciones devuelven un valor.</p>
+
+    <img src="img/img6.jpg" alt="Procedimientos y funciones" width="30%" height="20%">
+
+    <h4>Ejemplo de procedimiento almacenado</h4>
+<pre>
+CREATE PROCEDURE consultarClientes()
+BEGIN
+
+    SELECT *
+    FROM clientes;
+
+END;
+            </pre>
+
+<h4>Ventajas de los procedimientos almacenados</h4>
+
+    <ul>
+
+        <li>Reutilización de código</li>
+
+        <li>Mejora del rendimiento</li>
+
+        <li>Seguridad y control de acceso</li>
+
+        <li>Mantenimiento más sencillo</li>
+
+        <li> Permiten centralizar la lógica de negocio</li>
+
+    </ul>
+
+    <h4> Funciones</h4>
+
+    <p> Las funciones almacenada permite realizar operaciones y devolver un valor específico.</p>
+
+    <h4> Procedimientos y parámetros</h4>
+
+     <pre>
+CREATE PROCEDURE buscarCliente(
+    IN identificador INT
+)
+BEGIN
+
+    SELECT *
+    FROM clientes
+    WHERE id = identificador;
+
+END;
+            </pre>
+
+<p> Los procedimientos almacenados y las funciones permiten reutilizar operaciones y llevar parte de la logica al sistema gestor de la bases de datos.</p>
+
+</section>
+
+<br>
+<section id="triggers">
+
+<h3>Triggers</h3>
+
+    <p> Los triggers, tambien conocidos como disparadores, es un mecanismo que permite ejecutar automáticamente un conjunto de instrucciones en respuesta a ciertos eventos en la base de datos.</p>
+
+    <img src="img/foto1.png" alt="Triggers" width="30%" height="20%">
+
+    <h4>Eventos que pueden desencadenar un trigger</h4>
+    <ul>
+        <li>INSERT: Se activa cuando se inserta un nuevo registro en una tabla.</li>
+        <li>UPDATE: Se activa cuando se actualiza un registro existente en una tabla.</li>
+        <li>DELETE: Se activa cuando se elimina un registro de una tabla.</li>  
+    </ul>
+
+     <h3>Ejemplo</h3>
+
+            <pre>
+CREATE TRIGGER registrar_cambio
+AFTER UPDATE ON clientes
+FOR EACH ROW
+
+INSERT INTO historial
+(fecha, descripcion)
+VALUES
+(NOW(), 'Cliente actualizado');
+            </pre>
+
+    <p> Aproximacion un video para profundizar el tema de triggers</p>
+ 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GWRg6g_6YNE?si=4pzfETgue1BRpZ8l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+</section>
+ <br>
+<section id="actividades">
+
+    <h3>Actividades</h3>
+
+<p>
+                Las siguientes actividades permiten comprobar los
+                conocimientos adquiridos durante las lecturas.
+            </p>
+
+
+            <h3>Actividad 1: Conceptos básicos</h3>
+
+            <form>
+
+    <p>
+        ¿Qué elemento identifica de manera única
+        un registro?
+    </p>
+
+    <label>
+
+        <input
+            type="radio"
+            name="pregunta1"
+            value="a"
+        >
+
+        Clave primaria
+
+    </label>
+
+    <br>
+
+    <label>
+
+        <input
+            type="radio"
+            name="pregunta1"
+            value="b"
+        >
+
+        Clave foránea
+
+    </label>
+
+    <br>
+
+    <label>
+
+        <input
+            type="radio"
+            name="pregunta1"
+            value="c"
+        >
+
+        Trigger
+
+    </label>
+
+    <br><br>
+
+    <details>
+
+        <summary>Responder</summary>
+
+        <p>
+            La respuesta correcta es:
+            <strong>Clave primaria.</strong>
+        </p>
+
+        <p>
+            ✓ Correcto: la clave primaria identifica
+            de manera única cada registro de una tabla.
+        </p>
+
+    </details>
+
+</form>
+
+
+<h3>Actividad 2: SQL</h3>
+
+<form>
+
+    <p>
+        ¿Qué instrucción se utiliza para consultar
+        información?
+    </p>
+
+    <select name="sql">
+
+        <option value="">
+            Selecciona una respuesta
+        </option>
+
+        <option value="select">
+            SELECT
+        </option>
+
+        <option value="insert">
+            INSERT
+        </option>
+
+        <option value="delete">
+            DELETE
+        </option>
+
+        <option value="update">
+            UPDATE
+        </option>
+
+    </select>
+
+    <br><br>
+
+    <details>
+
+        <summary>Comprobar respuesta</summary>
+
+        <p>
+            La respuesta correcta es:
+            <strong>SELECT</strong>
+        </p>
+
+        <p>
+            ✓ Correcto: SELECT se utiliza para
+            consultar información de una tabla.
+        </p>
+
+    </details>
+
+</form>
+
+
+<h3>Actividad 3: Reto SQL</h3>
+
+<p>
+    Escribe una consulta SQL que permita obtener
+    los clientes mayores de 21 años.
+</p>
+
+
+<table border="1">
+
+    <tr>
+
+        <th>ID</th>
+
+        <th>Nombre</th>
+
+        <th>Edad</th>
+
+    </tr>
+
+    <tr>
+
+        <td>1</td>
+
+        <td>Juan</td>
+
+        <td>20</td>
+
+    </tr>
+
+    <tr>
+
+        <td>2</td>
+
+        <td>Laura</td>
+
+        <td>25</td>
+
+    </tr>
+
+    <tr>
+
+        <td>3</td>
+
+        <td>Carlos</td>
+
+        <td>30</td>
+
+    </tr>
+
+</table>
+
+<br>
+
+
+<textarea
+    name="consulta"
+    rows="8"
+    cols="60"
+    placeholder="Escribe aquí tu consulta SQL..."
+></textarea>
+
+<br><br>
+
+
+<details>
+
+    <summary>Comprobar respuesta</summary>
+
+    <p>
+        Una respuesta correcta sería:
+    </p>
+
+    <pre>
+SELECT *
+FROM clientes
+WHERE edad > 21;
+    </pre>
+
+    <p>
+        ✓ Correcto: la condición
+        <strong>edad &gt; 21</strong>
+        permite obtener los clientes cuya edad
+        es mayor de 21 años.
+    </p>
+
+</details>
+
+
+</section>
+
+<section id="autor">
+
+    <h3>Autor</h3>
+
+    <p> <strong>Nombre:</strong> Jesus Vega Diaz </p>
+
+    <p> <strong>Correo:</strong> vegadiazjesus08@gmail.com </p>
+
+    <p> <strong>Año:</strong> 2026 </p>
+
+<img src="img/me.jpeg" alt="Autor" width="20%" height="10%">
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Jesus Vega Diaz. Todos los derechos reservados.</p>  
+
+    <p> Objeto virtual de informacion </p>
+
+    <p> Bases de Datos II </p>
+</footer>
+</body>
+</html>
+
+
+
+ 
